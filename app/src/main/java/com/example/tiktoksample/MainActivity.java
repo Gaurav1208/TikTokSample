@@ -33,22 +33,21 @@ public class MainActivity extends AppCompatActivity {
         settingFragment = new SettingFragment();
 
         navigationView.initWithSaveInstanceState(savedInstanceState);
-        navigationView.addSpaceItem(new SpaceItem("",R.drawable.ic_history_black_24dp));
-        navigationView.addSpaceItem(new SpaceItem("",R.drawable.ic_favorite_black_24dp));
-        navigationView.addSpaceItem(new SpaceItem("",R.drawable.ic_home_black_24dp));
-        navigationView.addSpaceItem(new SpaceItem("",R.drawable.ic_add_black_24dp));
-        navigationView.addSpaceItem(new SpaceItem("",R.drawable.ic_settings_black_24dp));
+        navigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_history_black_24dp));
+        navigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_favorite_black_24dp));
+        navigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_add_black_24dp));
+        navigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_settings_black_24dp));
 
         navigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
             public void onCentreButtonClick() {
-               setFragment(homeFragment);
+                setFragment(homeFragment);
             }
 
             @Override
             public void onItemClick(int itemIndex, String itemName) {
 
-                switch (itemIndex){
+                switch (itemIndex) {
                     case 0:
                         setFragment(historyFragment);
                         return;
@@ -64,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
                     case 4:
                         setFragment(settingFragment);
                         return;
-                            default:
-                                setFragment(homeFragment);
+                    default:
+                        setFragment(homeFragment);
                 }
 
             }
@@ -78,10 +77,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setFragment (Fragment fragment){
+    private void setFragment(Fragment fragment) {
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.space,fragment);
+        fragmentTransaction.replace(R.id.space, fragment);
         fragmentTransaction.commit();
 
     }
